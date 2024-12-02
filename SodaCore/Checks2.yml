@@ -1,0 +1,12 @@
+for each dataset d:
+  tables:
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+  checks:
+    - freshness(createdon):
+        warn: when > 2h
+        fail: when > 4h

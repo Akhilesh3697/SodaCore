@@ -1,0 +1,10 @@
+checks for a:
+  - freshness(DateCreated):
+      warn: when > 2h
+      fail: when > 4h
+  - duplicate_count(SFID) = 0:
+      filter: SFID != 'CTC-0000617714' and SFID != 'ae21e111a69a638'
+  - missing_count(SFID) = 0:
+      filter: SFID is not null
+  - missing_count(UserName) = 0:
+      filter: DateCreated > GETDATE()-1

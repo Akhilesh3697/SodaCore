@@ -1,0 +1,12 @@
+data_source datasourece_name:
+ type: 'sqlserver'
+ host: ''
+ port: '1433'
+ username: 'dummy'
+ password: 'dummy'
+ database: ''
+ schema: ''
+ trusted_connection: true
+ encrypt: true
+ trust_server_certificate: true
+ driver: 'ODBC Driver 17 for SQL Server'

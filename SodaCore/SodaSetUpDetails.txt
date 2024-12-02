@@ -1,0 +1,27 @@
+Soda Core Installation:
+-> python --version
+-> python -m venv .venv---
+-> .\.venv\Scripts\activate--- 
+
+If above one will not worked then
+C:\Program Files\Python39 after went inside this folder then python -m venv "c:\CRM Views Changes"\venv
+cd\ then cd C:\Program Files\Python39
+then activate the scripts.---.\.venv\Scripts\activate
+
+-> python -m pip install --upgrade pip
+-> python -m pip install soda-core-sqlserver
+-> python -m pip install soda-core-snowflake
+
+If above one willnot worked then
+python -m pip install soda-core-snowflake --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+--to check the database connection 
+--soda test-connection -d nasm_stgdb -c configurationSqlDB.yml
+
+to run the checks.yml files in soda
+--soda scan -d nasm_stgdb -c configurationSqlDB.yml checks_Nasm.yml
+--nasm_stgdb it is the name of the data source.
+--configurationSqlDB.yml it is the database configuration file name.
+--checks_Nasm.yml it is the name of the checks file.
+
+For different database we can add those in same configuration file but for checks we have to create a new files,

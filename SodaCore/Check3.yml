@@ -1,0 +1,37 @@
+for each dataset d:
+  tables:
+    - a
+    - b
+    - c
+    - d
+  checks:
+    - freshness(SystemCreatedDate):
+        warn: when > 2h
+        fail: when > 4h
+
+checks for a:
+  - missing_count(PermissionType) = 0 :
+      filter : SystemModifiedDate <> null
+  - missing_count(CourseID) = 0 :
+      filter : PermissionType <> null
+
+checks for b:
+  - missing_count(UAID) = 0
+  - missing_count(CourseID) = 0
+    
+checks for c:
+  - missing_count(PermissionType) = 0
+  - missing_count(UAID) = 0:
+      filter : SystemCreatedDate > '2021-04-01 09:29:07.1000000'
+
+checks for d:
+  - missing_count(PermissionType) = 0
+  - missing_count(UAID) = 0:
+      filter : SystemCreatedDate > '2020-06-24 04:36:39.943'
+
+checks for e:
+  - duplicate_count(Paymentid) = 0
+
+checks for f:
+  - missing_count(UAID) = 0:
+      filter: SystemCreatedDate > '2021-11-03 07:36:27.7133333'

@@ -1,0 +1,4 @@
+checks for table_name:
+  - invalid_count(Source) = 0:
+      invalid values: [GFW-Magento]
+      filter : OrderDate>'2024-07-23 21:58:28.000'
